@@ -1,0 +1,128 @@
+# Now here i'm going to create Resident evil 5 game with basics.
+
+# There are only 2 players in this game.
+# There are age for each player.
+# There are only 4 Weapons for each player in this game.
+# Health is 100% for each player.
+
+
+# Here's our project of game making
+# Topics
+# PlayerCharacter Design
+# PlayerAge Design
+# PlayerWeapons Design
+# PlayerHealth Design
+
+
+GameStart = input('PRESS ENTER TO SEE THE CONTENTS OF THE GAME: ')
+
+
+class PlayerCharacter:
+    # This will be the requirenment of the games in order to play.
+    NeedAGamerID = 'Yes Windows Live Gamer ID will be required for online or offline gameplay'.upper()  # This is Class Object Attribute that doesn't change or modified it remains the same.
+    GraphicsCardRequired = True
+    SoundCard = True
+    GamingMouse = True
+    JoyStick = False
+
+    def __init__(self, Playername):
+        self.Playername = Playername  # Self is attributes
+
+    def playermale(self):
+        print(f'The Male player is {self.Playername}')
+
+
+class PlayerAge:
+    def __init__(self, player_age):
+        self.player_age = player_age
+
+
+class ChrisRedfileWeapons:
+    def __init__(self, **Weapon1):
+        self.Weapon1 = Weapon1
+
+
+class ShevaAlomarWeapons:
+    def __init__(self, **Weapon2):
+        self.Weapon2 = Weapon2
+
+
+class PlayersHealthType:
+    def __init__(self, Health):
+        self.Health = Health
+
+
+class age_require:
+    def __init__(self, age):
+        self.age = age
+        if age > 18:
+            print('Yes you\'re above 18 so, game is playable.')
+        elif age < 18:
+            print('No you\'re age is lesser than 18, so you can\'t play the game.')
+        elif age == 18:
+            print('You can play the game but with some restrictions.')
+
+
+class GraphicsCardRequired:
+    def __init__(self, GraphicRequire = 'Default Graphics'):
+        self.GraphicRequires = GraphicRequire
+
+        if GraphicsCardRequired is True:
+            print(
+                input('Please select your graphics card, e.g: GTX, RTX, AMD RADEON, INTEL HD GRAPHICS, VEGA GRAPHICS'))
+        elif GraphicsCardRequired is False:
+            print('No, Graphics Card Require.')
+
+    def Id(self):
+        print(PlayerCharacter.NeedAGamerID)
+
+    def run(self):
+        print('Run')
+        return 'Running'
+
+
+player1 = PlayerCharacter('Chris Redfield')
+player2 = PlayerCharacter('Sheva Alomar')
+age = PlayerAge('Chris Redfield age is = 38')
+age2 = PlayerAge('Sheva Alomar age is = 29')
+
+player_age_required = age_require(int(input('PLEASE ENTER YOU AGE TOO SEE IF YOU CAN PLAY THE GAME.')))
+GraphicsCard = GraphicsCardRequired(input('Please select your graphics card, e.g: GTX, RTX, AMD RADEON, INTEL HD GRAPHICS, VEGA GRAPHICS: '))
+
+health = PlayersHealthType('Health is % Percentage Type e.g: 100%')
+
+player_wep1 = ChrisRedfileWeapons(Handgun='H&K P8', SubMachinGun='H&K MP5', MachineGun='AK 74',
+                                  BoltActionRifle='H&K PSG-1', Shotgun='Beneli M3',
+                                  Launchers='Grenade Launcher',
+                                  Grenades='Incendiary Grenade, Hand Grenade')
+
+player_wep2 = ShevaAlomarWeapons(Handgun='M92F', SubMachineGun='VZ61', MachineGun='SIG 556',
+                                 BoltActionRifle='Dragunov SVD'
+                                 , Shotgun='Ithaca M37', Launchers='Rocket Lanchers',
+                                 Grenades='Flash Grenade, Proximity bomb', ExtraWeapon='Stun Rod')
+
+print('Player age is down here'.upper())
+print(player_age_required.age)
+
+print('Players names are here: '.upper())
+print(player1.Playername)
+print(player2.Playername)
+
+print('Player ages are here: '.upper())
+
+print(age.player_age)
+print(age2.player_age)
+
+print(health.Health)
+
+print('Chris Redfield Weapons: '.upper())
+print(player_wep1.Weapon1)
+
+print('Sheva Alomar Weapons: '.upper())
+print(player_wep2.Weapon2)
+
+print(PlayerCharacter.NeedAGamerID)
+print(PlayerCharacter.SoundCard)
+print(PlayerCharacter.GraphicsCardRequired)
+print(PlayerCharacter.JoyStick)
+print(PlayerCharacter.GamingMouse)
